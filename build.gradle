@@ -15,11 +15,12 @@ subprojects {
                     'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                     'Timestamp'               : System.currentTimeMillis(),
                     'Built-On-Java'           : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
-                    'Built-On-Minecraft'      : minecraft_version,
+                    'Built-On-Miznecraft'      : minecraft_version,
                     "Main-Class"              : "com.github.gergerapex1.MCExternalConsole.terminal.Launcher",
                     "TweakClass"              : "com.github.gergerapex1.MCExternalConsole.mixins.ClientTweaker"
             ])
         }
+        baseName("${archivesBaseName}-${version}")
     }
     repositories {
 
