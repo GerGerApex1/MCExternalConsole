@@ -1,0 +1,49 @@
+subprojects {
+    apply plugin: "java"
+
+    jar {
+        from(rootProject.file("LICENSE")) {
+            rename { "${it}_${mod_name}" }
+        }
+        manifest {
+            attributes([
+                    'Specification-Title'     : mod_name,
+                    'Specification-Vendor'    : mod_author,
+                    'Specification-Version'   : project.jar,
+                    'Implementation-Title'    : project.name,
+                    'Implementation-Vendor'   : mod_author,
+                    'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                    'Timestamp'               : System.currentTimeMillis(),
+                    'Built-On-Java'           : "${System.getProperty('java.vm.version')} (${System.getProperty('java.vm.vendor')})",
+                    'Built-On-Minecraft'      : minecraft_version,
+                    "Main-Class"              : "com.github.gergerapex1.MCExternalConsole.terminal.Launcher",
+                    "TweakClass"              : "com.github.gergerapex1.MCExternalConsole.mixins.ClientTweaker"
+            ])
+        }
+    }
+    repositories {
+
+        mavenCentral()
+
+        maven {
+            name = 'Sponge / Mixin'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        }
+
+        maven {
+            name = 'BlameJared Maven (CrT / Bookshelf)'
+            url = 'https://maven.blamejared.com'
+        }
+
+        maven {
+            name = 'PaperMC'
+            url = "https://repo.papermc.io/repository/maven-public/"
+        }
+
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        compile 'com.google.protobuf:protobuf-java:3.22.2'
+        compile 'io.netty:netty-all:4.0.23.Final'
+    }
+}

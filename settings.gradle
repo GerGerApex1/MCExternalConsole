@@ -1,0 +1,2 @@
+rootProject.name = "MCExternalConsole"
+include("Mod", "Terminal")

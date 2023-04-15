@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.github.gergerapex1.MCExternalConsoleTerminal;
+
+option java_package = "com.github.gergerapex1.MCExternalConsoleTerminal";
+option java_outer_classname = "OutputData";
+
+message ServerData {
+  int64 timestamp = 1;
+  string loggerName = 2;
+  string message = 3;
+}

@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "verbose": true,
+  "package": "com.github.gergerapex1.MCExternalConsole.mixins",
+  "mixins": []
+}

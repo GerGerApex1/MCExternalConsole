@@ -1,0 +1,15 @@
+[
+  {
+    "modid": "mc-externalconsole",
+    "name": "MCExternalConsole",
+    "description": "Opens up seperate Console process to display console output.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "ExampleDude"
+    ],
+    "logoFile": "",
+  }
+]
